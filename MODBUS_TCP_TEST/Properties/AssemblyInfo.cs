@@ -1,23 +1,24 @@
-﻿using System.Reflection;
+﻿using System.Resources;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // 어셈블리에 대한 일반 정보는 다음 특성 집합을 통해 
 // 제어됩니다. 어셈블리와 관련된 정보를 수정하려면
 // 이러한 특성 값을 변경하세요.
-[assembly: AssemblyTitle("MODBUS_TCP_TEST")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("MODBUS TEST (TCP/IP)")]
+[assembly: AssemblyDescription("TCP/IP Communication Test Program (Protocol : Modbus)")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MODBUS_TCP_TEST")]
-[assembly: AssemblyCopyright("Copyright ©  2020")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCompany("DjwChoi (Juwon Choi)")]
+[assembly: AssemblyProduct("MODBUS TEST (TCP/IP)")]
+[assembly: AssemblyCopyright("Copyright © 2020 by DjwChoi (Juwon Choi) All rights reserved")]
+[assembly: AssemblyTrademark("MODBUS TEST (TCP/IP)")]
 [assembly: AssemblyCulture("")]
 
 // ComVisible을 false로 설정하면 이 어셈블리의 형식이 COM 구성 요소에 
 // 표시되지 않습니다. COM에서 이 어셈블리의 형식에 액세스하려면
 // 해당 형식에 대해 ComVisible 특성을 true로 설정하세요.
-[assembly: ComVisible(false)]
+[assembly: ComVisible(true)]
 
 // 이 프로젝트가 COM에 노출되는 경우 다음 GUID는 typelib의 ID를 나타냅니다.
 [assembly: Guid("2de47995-0f11-4880-8796-d113391c2500")]
@@ -32,5 +33,7 @@ using System.Runtime.InteropServices;
 // 모든 값을 지정하거나 아래와 같이 '*'를 사용하여 빌드 번호 및 수정 번호가 자동으로
 // 지정되도록 할 수 있습니다.
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("0.0.0.0")]
+[assembly: AssemblyFileVersion("0.0.0.0")]
+[assembly: NeutralResourcesLanguage("en")]
+
