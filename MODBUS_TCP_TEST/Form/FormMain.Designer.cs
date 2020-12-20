@@ -29,11 +29,22 @@
         private void InitializeComponent()
         {
             this.gbTCPSetting = new System.Windows.Forms.GroupBox();
+            this.tbPort = new System.Windows.Forms.TextBox();
+            this.pnBlank = new System.Windows.Forms.Panel();
+            this.tbIP4 = new System.Windows.Forms.TextBox();
+            this.lbDot3 = new System.Windows.Forms.Label();
+            this.tbIP3 = new System.Windows.Forms.TextBox();
+            this.lbDot2 = new System.Windows.Forms.Label();
+            this.tbIP2 = new System.Windows.Forms.TextBox();
+            this.tbIP1 = new System.Windows.Forms.TextBox();
+            this.lbDot1 = new System.Windows.Forms.Label();
             this.btConnect = new System.Windows.Forms.Button();
             this.lbIP = new System.Windows.Forms.Label();
             this.lbPort = new System.Windows.Forms.Label();
             this.ssStatus = new System.Windows.Forms.StatusStrip();
             this.tsslConnectionStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslVersion = new System.Windows.Forms.ToolStripStatusLabel();
+            this.rsslName = new System.Windows.Forms.ToolStripStatusLabel();
             this.gbModbusTools = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.cbModbusRules = new System.Windows.Forms.ComboBox();
@@ -65,17 +76,6 @@
             this.rbHex = new System.Windows.Forms.RadioButton();
             this.btSendMassage = new System.Windows.Forms.Button();
             this.tbMessage = new System.Windows.Forms.TextBox();
-            this.tbIP1 = new System.Windows.Forms.TextBox();
-            this.lbDot1 = new System.Windows.Forms.Label();
-            this.tbIP2 = new System.Windows.Forms.TextBox();
-            this.tbIP3 = new System.Windows.Forms.TextBox();
-            this.lbDot2 = new System.Windows.Forms.Label();
-            this.tbIP4 = new System.Windows.Forms.TextBox();
-            this.lbDot3 = new System.Windows.Forms.Label();
-            this.udPort = new System.Windows.Forms.NumericUpDown();
-            this.pnBlank = new System.Windows.Forms.Panel();
-            this.tsslVersion = new System.Windows.Forms.ToolStripStatusLabel();
-            this.rsslName = new System.Windows.Forms.ToolStripStatusLabel();
             this.gbTCPSetting.SuspendLayout();
             this.ssStatus.SuspendLayout();
             this.gbModbusTools.SuspendLayout();
@@ -86,13 +86,12 @@
             this.gbTransmitterLog.SuspendLayout();
             this.gbReceiverLog.SuspendLayout();
             this.gbTransmitterTools.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.udPort)).BeginInit();
             this.SuspendLayout();
             // 
             // gbTCPSetting
             // 
+            this.gbTCPSetting.Controls.Add(this.tbPort);
             this.gbTCPSetting.Controls.Add(this.pnBlank);
-            this.gbTCPSetting.Controls.Add(this.udPort);
             this.gbTCPSetting.Controls.Add(this.tbIP4);
             this.gbTCPSetting.Controls.Add(this.lbDot3);
             this.gbTCPSetting.Controls.Add(this.tbIP3);
@@ -111,6 +110,114 @@
             this.gbTCPSetting.TabStop = false;
             this.gbTCPSetting.Text = "TCP/IP Setting";
             // 
+            // tbPort
+            // 
+            this.tbPort.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbPort.Location = new System.Drawing.Point(57, 54);
+            this.tbPort.MaxLength = 5;
+            this.tbPort.Name = "tbPort";
+            this.tbPort.Size = new System.Drawing.Size(177, 25);
+            this.tbPort.TabIndex = 42;
+            this.tbPort.Text = "00000";
+            this.tbPort.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbPort.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPort_KeyPress);
+            this.tbPort.Leave += new System.EventHandler(this.tbPort_Leave);
+            // 
+            // pnBlank
+            // 
+            this.pnBlank.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pnBlank.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnBlank.Location = new System.Drawing.Point(9, 88);
+            this.pnBlank.Name = "pnBlank";
+            this.pnBlank.Size = new System.Drawing.Size(225, 89);
+            this.pnBlank.TabIndex = 6;
+            // 
+            // tbIP4
+            // 
+            this.tbIP4.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbIP4.Location = new System.Drawing.Point(199, 21);
+            this.tbIP4.MaxLength = 3;
+            this.tbIP4.Name = "tbIP4";
+            this.tbIP4.Size = new System.Drawing.Size(35, 25);
+            this.tbIP4.TabIndex = 33;
+            this.tbIP4.Text = "000";
+            this.tbIP4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbIP4.TextChanged += new System.EventHandler(this.tbIP4_TextChanged);
+            this.tbIP4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbIP4_KeyPress);
+            this.tbIP4.Leave += new System.EventHandler(this.tbIP4_Leave);
+            // 
+            // lbDot3
+            // 
+            this.lbDot3.AutoSize = true;
+            this.lbDot3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbDot3.Location = new System.Drawing.Point(189, 28);
+            this.lbDot3.Name = "lbDot3";
+            this.lbDot3.Size = new System.Drawing.Size(12, 15);
+            this.lbDot3.TabIndex = 32;
+            this.lbDot3.Text = ".";
+            // 
+            // tbIP3
+            // 
+            this.tbIP3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbIP3.Location = new System.Drawing.Point(151, 21);
+            this.tbIP3.MaxLength = 3;
+            this.tbIP3.Name = "tbIP3";
+            this.tbIP3.Size = new System.Drawing.Size(35, 25);
+            this.tbIP3.TabIndex = 31;
+            this.tbIP3.Text = "000";
+            this.tbIP3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbIP3.TextChanged += new System.EventHandler(this.tbIP3_TextChanged);
+            this.tbIP3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbIP3_KeyPress);
+            this.tbIP3.Leave += new System.EventHandler(this.tbIP3_Leave);
+            // 
+            // lbDot2
+            // 
+            this.lbDot2.AutoSize = true;
+            this.lbDot2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbDot2.Location = new System.Drawing.Point(142, 28);
+            this.lbDot2.Name = "lbDot2";
+            this.lbDot2.Size = new System.Drawing.Size(12, 15);
+            this.lbDot2.TabIndex = 30;
+            this.lbDot2.Text = ".";
+            // 
+            // tbIP2
+            // 
+            this.tbIP2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbIP2.Location = new System.Drawing.Point(104, 21);
+            this.tbIP2.MaxLength = 3;
+            this.tbIP2.Name = "tbIP2";
+            this.tbIP2.Size = new System.Drawing.Size(35, 25);
+            this.tbIP2.TabIndex = 29;
+            this.tbIP2.Text = "000";
+            this.tbIP2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbIP2.TextChanged += new System.EventHandler(this.tbIP2_TextChanged);
+            this.tbIP2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbIP2_KeyPress);
+            this.tbIP2.Leave += new System.EventHandler(this.tbIP2_Leave);
+            // 
+            // tbIP1
+            // 
+            this.tbIP1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbIP1.Location = new System.Drawing.Point(57, 21);
+            this.tbIP1.MaxLength = 3;
+            this.tbIP1.Name = "tbIP1";
+            this.tbIP1.Size = new System.Drawing.Size(35, 25);
+            this.tbIP1.TabIndex = 27;
+            this.tbIP1.Text = "000";
+            this.tbIP1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbIP1.TextChanged += new System.EventHandler(this.tbIP1_TextChanged);
+            this.tbIP1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbIP1_KeyPress);
+            this.tbIP1.Leave += new System.EventHandler(this.tbIP1_Leave);
+            // 
+            // lbDot1
+            // 
+            this.lbDot1.AutoSize = true;
+            this.lbDot1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbDot1.Location = new System.Drawing.Point(95, 28);
+            this.lbDot1.Name = "lbDot1";
+            this.lbDot1.Size = new System.Drawing.Size(12, 15);
+            this.lbDot1.TabIndex = 28;
+            this.lbDot1.Text = ".";
+            // 
             // btConnect
             // 
             this.btConnect.Location = new System.Drawing.Point(9, 186);
@@ -120,12 +227,13 @@
             this.btConnect.TabIndex = 24;
             this.btConnect.Text = "Connect";
             this.btConnect.UseVisualStyleBackColor = true;
+            this.btConnect.Click += new System.EventHandler(this.btConnect_Click);
             // 
             // lbIP
             // 
             this.lbIP.AutoSize = true;
             this.lbIP.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbIP.Location = new System.Drawing.Point(6, 27);
+            this.lbIP.Location = new System.Drawing.Point(12, 27);
             this.lbIP.Name = "lbIP";
             this.lbIP.Size = new System.Drawing.Size(20, 15);
             this.lbIP.TabIndex = 15;
@@ -135,7 +243,7 @@
             // 
             this.lbPort.AutoSize = true;
             this.lbPort.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbPort.Location = new System.Drawing.Point(6, 59);
+            this.lbPort.Location = new System.Drawing.Point(12, 59);
             this.lbPort.Name = "lbPort";
             this.lbPort.Size = new System.Drawing.Size(34, 15);
             this.lbPort.TabIndex = 17;
@@ -160,6 +268,23 @@
             this.tsslConnectionStatus.Size = new System.Drawing.Size(134, 20);
             this.tsslConnectionStatus.Text = "Connection Status";
             this.tsslConnectionStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tsslVersion
+            // 
+            this.tsslVersion.Name = "tsslVersion";
+            this.tsslVersion.Size = new System.Drawing.Size(502, 20);
+            this.tsslVersion.Spring = true;
+            this.tsslVersion.Text = "0.0.0.0 ver.";
+            this.tsslVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // rsslName
+            // 
+            this.rsslName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.rsslName.Name = "rsslName";
+            this.rsslName.Size = new System.Drawing.Size(502, 20);
+            this.rsslName.Spring = true;
+            this.rsslName.Text = "Copyright © 2020 by DjwChoi (Juwon Choi) All rights reserved";
+            this.rsslName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // gbModbusTools
             // 
@@ -544,113 +669,6 @@
             this.tbMessage.Size = new System.Drawing.Size(694, 25);
             this.tbMessage.TabIndex = 0;
             // 
-            // tbIP1
-            // 
-            this.tbIP1.Location = new System.Drawing.Point(40, 21);
-            this.tbIP1.Name = "tbIP1";
-            this.tbIP1.Size = new System.Drawing.Size(40, 25);
-            this.tbIP1.TabIndex = 27;
-            // 
-            // lbDot1
-            // 
-            this.lbDot1.AutoSize = true;
-            this.lbDot1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbDot1.Location = new System.Drawing.Point(82, 28);
-            this.lbDot1.Name = "lbDot1";
-            this.lbDot1.Size = new System.Drawing.Size(12, 15);
-            this.lbDot1.TabIndex = 28;
-            this.lbDot1.Text = ".";
-            // 
-            // tbIP2
-            // 
-            this.tbIP2.Location = new System.Drawing.Point(91, 21);
-            this.tbIP2.Name = "tbIP2";
-            this.tbIP2.Size = new System.Drawing.Size(40, 25);
-            this.tbIP2.TabIndex = 29;
-            // 
-            // tbIP3
-            // 
-            this.tbIP3.Location = new System.Drawing.Point(142, 21);
-            this.tbIP3.Name = "tbIP3";
-            this.tbIP3.Size = new System.Drawing.Size(40, 25);
-            this.tbIP3.TabIndex = 31;
-            // 
-            // lbDot2
-            // 
-            this.lbDot2.AutoSize = true;
-            this.lbDot2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbDot2.Location = new System.Drawing.Point(133, 28);
-            this.lbDot2.Name = "lbDot2";
-            this.lbDot2.Size = new System.Drawing.Size(12, 15);
-            this.lbDot2.TabIndex = 30;
-            this.lbDot2.Text = ".";
-            // 
-            // tbIP4
-            // 
-            this.tbIP4.Location = new System.Drawing.Point(194, 21);
-            this.tbIP4.Name = "tbIP4";
-            this.tbIP4.Size = new System.Drawing.Size(40, 25);
-            this.tbIP4.TabIndex = 33;
-            // 
-            // lbDot3
-            // 
-            this.lbDot3.AutoSize = true;
-            this.lbDot3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbDot3.Location = new System.Drawing.Point(184, 28);
-            this.lbDot3.Name = "lbDot3";
-            this.lbDot3.Size = new System.Drawing.Size(12, 15);
-            this.lbDot3.TabIndex = 32;
-            this.lbDot3.Text = ".";
-            // 
-            // udPort
-            // 
-            this.udPort.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.udPort.Location = new System.Drawing.Point(40, 54);
-            this.udPort.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.udPort.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.udPort.Name = "udPort";
-            this.udPort.Size = new System.Drawing.Size(194, 25);
-            this.udPort.TabIndex = 42;
-            this.udPort.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // pnBlank
-            // 
-            this.pnBlank.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pnBlank.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnBlank.Location = new System.Drawing.Point(9, 88);
-            this.pnBlank.Name = "pnBlank";
-            this.pnBlank.Size = new System.Drawing.Size(225, 89);
-            this.pnBlank.TabIndex = 6;
-            // 
-            // tsslVersion
-            // 
-            this.tsslVersion.Name = "tsslVersion";
-            this.tsslVersion.Size = new System.Drawing.Size(483, 20);
-            this.tsslVersion.Spring = true;
-            this.tsslVersion.Text = "0.0.0.0 ver.";
-            this.tsslVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // rsslName
-            // 
-            this.rsslName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.rsslName.Name = "rsslName";
-            this.rsslName.Size = new System.Drawing.Size(483, 20);
-            this.rsslName.Spring = true;
-            this.rsslName.Text = "Copyright © 2020 by DjwChoi (Juwon Choi) All rights reserved";
-            this.rsslName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // FormMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -681,7 +699,6 @@
             this.gbReceiverLog.ResumeLayout(false);
             this.gbTransmitterTools.ResumeLayout(false);
             this.gbTransmitterTools.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.udPort)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -733,10 +750,10 @@
         private System.Windows.Forms.TextBox tbIP3;
         private System.Windows.Forms.Label lbDot2;
         private System.Windows.Forms.TextBox tbIP2;
-        private System.Windows.Forms.NumericUpDown udPort;
         private System.Windows.Forms.Panel pnBlank;
         private System.Windows.Forms.ToolStripStatusLabel tsslVersion;
         private System.Windows.Forms.ToolStripStatusLabel rsslName;
+        private System.Windows.Forms.TextBox tbPort;
     }
 }
 
