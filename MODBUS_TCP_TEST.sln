@@ -1,11 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1000
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MODBUS_TCP_TEST", "MODBUS_TCP_TEST\MODBUS_TCP_TEST.csproj", "{2DE47995-0F11-4880-8796-D113391C2500}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MODBUS_TCP", "MODBUS_TCP\MODBUS_TCP\MODBUS_TCP.shproj", "{D5E00ED6-CAC4-4009-B558-96A195CC1C3C}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		MODBUS_TCP\MODBUS_TCP\MODBUS_TCP.projitems*{2de47995-0f11-4880-8796-d113391c2500}*SharedItemsImports = 4
+		MODBUS_TCP\MODBUS_TCP\MODBUS_TCP.projitems*{d5e00ed6-cac4-4009-b558-96a195cc1c3c}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

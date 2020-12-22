@@ -660,6 +660,7 @@
             this.btSendMassage.TabIndex = 42;
             this.btSendMassage.Text = "Send Message";
             this.btSendMassage.UseVisualStyleBackColor = true;
+            this.btSendMassage.Click += new System.EventHandler(this.btSendMassage_Click);
             // 
             // tbMessage
             // 

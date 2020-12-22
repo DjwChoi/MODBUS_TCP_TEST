@@ -7,6 +7,7 @@ namespace MODBUS_TCP
     public partial class FormMain : Form
     {
         private Logger mLogger = null;
+        private Master mMaster = null;
 
         public FormMain()
         {
@@ -21,7 +22,10 @@ namespace MODBUS_TCP
                 tsslVersion.Text = "Build Version " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
                 // Connection Status
-                tsslConnectionStatus.Text = "Disconneted.";
+                tsslConnectionStatus.Text = "Disconnected.";
+
+                // Enable GroupBoxs
+                gbTCPSetting.Enabled = true;
 
                 // Disenable GroupBoxs
                 gbModbusTools.Enabled = false;
@@ -32,6 +36,12 @@ namespace MODBUS_TCP
                 // Do Initialize for Member, Logger Class 
                 mLogger = new Logger();
                 mLogger.OnLogged += mLogger_OnLogged;
+
+                // Do Initialize for Member, Master Class
+                mMaster = new Master();
+                mMaster.OnReceivedData += mMaster_OnReceivedData;
+                mMaster.OnException += mMaster_OnException;
+
             }
             catch (Exception eFormMain_Load)
             {
@@ -55,6 +65,20 @@ namespace MODBUS_TCP
                     lbReceiver.Items.Add(LogMassage);
                     break;
             }
+        }
+
+        #endregion
+
+        #region Master Events
+
+        private void mMaster_OnReceivedData(byte[] data)
+        {
+            mLogger.log(System.BitConverter.ToString(data), LogType.Receiver, true);
+        }
+
+        private void mMaster_OnException(ushort id, byte unit, byte function, ExceptionCode exception)
+        {
+
         }
 
         #endregion
@@ -176,7 +200,43 @@ namespace MODBUS_TCP
 
         private void btConnect_Click(object sender, EventArgs e)
         {
+            mMaster.Connect(string.Format("{0}.{1}.{2}.{3}", tbIP1.Text, tbIP2.Text, tbIP3.Text, tbIP4.Text), Convert.ToUInt16(tbPort.Text));
 
+            if (mMaster.bConnected)
+            {
+                // Connection Status
+                btConnect.Text = "Disconnect";
+                tsslConnectionStatus.Text = "Connected.";
+
+                // Enable GroupBoxs
+                gbTCPSetting.Enabled = true;
+
+                // Disenable GroupBoxs
+                gbModbusTools.Enabled = false;
+                gbTransmitterTools.Enabled = false;
+                gbTransmitterLog.Enabled = false;
+                gbReceiverLog.Enabled = false;
+            }
+            else
+            {
+                // Connection Status
+                btConnect.Text = "Connect";
+                tsslConnectionStatus.Text = "Disconnected.";
+
+                // Enable GroupBoxs
+                gbTCPSetting.Enabled = true;
+
+                // Disenable GroupBoxs
+                gbModbusTools.Enabled = false;
+                gbTransmitterTools.Enabled = false;
+                gbTransmitterLog.Enabled = false;
+                gbReceiverLog.Enabled = false;
+            }
+        }
+
+        private void btSendMassage_Click(object sender, EventArgs e)
+        {
+            // TODO: Send Massage!
         }
     }
 }
