@@ -1,0 +1,3 @@
+[submodule "MODBUS_TCP"]
+	path = MODBUS_TCP
+	url = git@github.com:DjwChoi/MODBUS_TCP.git
