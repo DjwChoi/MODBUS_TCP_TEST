@@ -116,7 +116,7 @@
             this.tbPort.Location = new System.Drawing.Point(57, 54);
             this.tbPort.MaxLength = 5;
             this.tbPort.Name = "tbPort";
-            this.tbPort.Size = new System.Drawing.Size(177, 25);
+            this.tbPort.Size = new System.Drawing.Size(177, 28);
             this.tbPort.TabIndex = 42;
             this.tbPort.Text = "00000";
             this.tbPort.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -138,7 +138,7 @@
             this.tbIP4.Location = new System.Drawing.Point(199, 21);
             this.tbIP4.MaxLength = 3;
             this.tbIP4.Name = "tbIP4";
-            this.tbIP4.Size = new System.Drawing.Size(35, 25);
+            this.tbIP4.Size = new System.Drawing.Size(35, 28);
             this.tbIP4.TabIndex = 33;
             this.tbIP4.Text = "000";
             this.tbIP4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -152,7 +152,7 @@
             this.lbDot3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbDot3.Location = new System.Drawing.Point(189, 28);
             this.lbDot3.Name = "lbDot3";
-            this.lbDot3.Size = new System.Drawing.Size(12, 15);
+            this.lbDot3.Size = new System.Drawing.Size(14, 18);
             this.lbDot3.TabIndex = 32;
             this.lbDot3.Text = ".";
             // 
@@ -162,7 +162,7 @@
             this.tbIP3.Location = new System.Drawing.Point(151, 21);
             this.tbIP3.MaxLength = 3;
             this.tbIP3.Name = "tbIP3";
-            this.tbIP3.Size = new System.Drawing.Size(35, 25);
+            this.tbIP3.Size = new System.Drawing.Size(35, 28);
             this.tbIP3.TabIndex = 31;
             this.tbIP3.Text = "000";
             this.tbIP3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -176,7 +176,7 @@
             this.lbDot2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbDot2.Location = new System.Drawing.Point(142, 28);
             this.lbDot2.Name = "lbDot2";
-            this.lbDot2.Size = new System.Drawing.Size(12, 15);
+            this.lbDot2.Size = new System.Drawing.Size(14, 18);
             this.lbDot2.TabIndex = 30;
             this.lbDot2.Text = ".";
             // 
@@ -186,7 +186,7 @@
             this.tbIP2.Location = new System.Drawing.Point(104, 21);
             this.tbIP2.MaxLength = 3;
             this.tbIP2.Name = "tbIP2";
-            this.tbIP2.Size = new System.Drawing.Size(35, 25);
+            this.tbIP2.Size = new System.Drawing.Size(35, 28);
             this.tbIP2.TabIndex = 29;
             this.tbIP2.Text = "000";
             this.tbIP2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -200,7 +200,7 @@
             this.tbIP1.Location = new System.Drawing.Point(57, 21);
             this.tbIP1.MaxLength = 3;
             this.tbIP1.Name = "tbIP1";
-            this.tbIP1.Size = new System.Drawing.Size(35, 25);
+            this.tbIP1.Size = new System.Drawing.Size(35, 28);
             this.tbIP1.TabIndex = 27;
             this.tbIP1.Text = "000";
             this.tbIP1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -214,7 +214,7 @@
             this.lbDot1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbDot1.Location = new System.Drawing.Point(95, 28);
             this.lbDot1.Name = "lbDot1";
-            this.lbDot1.Size = new System.Drawing.Size(12, 15);
+            this.lbDot1.Size = new System.Drawing.Size(14, 18);
             this.lbDot1.TabIndex = 28;
             this.lbDot1.Text = ".";
             // 
@@ -235,7 +235,7 @@
             this.lbIP.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbIP.Location = new System.Drawing.Point(12, 27);
             this.lbIP.Name = "lbIP";
-            this.lbIP.Size = new System.Drawing.Size(20, 15);
+            this.lbIP.Size = new System.Drawing.Size(22, 18);
             this.lbIP.TabIndex = 15;
             this.lbIP.Text = "IP";
             // 
@@ -245,7 +245,7 @@
             this.lbPort.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbPort.Location = new System.Drawing.Point(12, 59);
             this.lbPort.Name = "lbPort";
-            this.lbPort.Size = new System.Drawing.Size(34, 15);
+            this.lbPort.Size = new System.Drawing.Size(41, 18);
             this.lbPort.TabIndex = 17;
             this.lbPort.Text = "Port";
             // 
@@ -256,23 +256,23 @@
             this.tsslConnectionStatus,
             this.tsslVersion,
             this.rsslName});
-            this.ssStatus.Location = new System.Drawing.Point(0, 556);
+            this.ssStatus.Location = new System.Drawing.Point(0, 549);
             this.ssStatus.Name = "ssStatus";
-            this.ssStatus.Size = new System.Drawing.Size(1154, 25);
+            this.ssStatus.Size = new System.Drawing.Size(1154, 32);
             this.ssStatus.TabIndex = 1;
             this.ssStatus.Text = "ssStatus";
             // 
             // tsslConnectionStatus
             // 
             this.tsslConnectionStatus.Name = "tsslConnectionStatus";
-            this.tsslConnectionStatus.Size = new System.Drawing.Size(134, 20);
+            this.tsslConnectionStatus.Size = new System.Drawing.Size(159, 25);
             this.tsslConnectionStatus.Text = "Connection Status";
             this.tsslConnectionStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tsslVersion
             // 
             this.tsslVersion.Name = "tsslVersion";
-            this.tsslVersion.Size = new System.Drawing.Size(502, 20);
+            this.tsslVersion.Size = new System.Drawing.Size(490, 25);
             this.tsslVersion.Spring = true;
             this.tsslVersion.Text = "0.0.0.0 ver.";
             this.tsslVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -281,7 +281,7 @@
             // 
             this.rsslName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.rsslName.Name = "rsslName";
-            this.rsslName.Size = new System.Drawing.Size(502, 20);
+            this.rsslName.Size = new System.Drawing.Size(490, 25);
             this.rsslName.Spring = true;
             this.rsslName.Text = "Copyright © 2020 by DjwChoi (Juwon Choi) All rights reserved";
             this.rsslName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -333,7 +333,7 @@
             this.cbModbusRules.Location = new System.Drawing.Point(430, 121);
             this.cbModbusRules.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbModbusRules.Name = "cbModbusRules";
-            this.cbModbusRules.Size = new System.Drawing.Size(199, 23);
+            this.cbModbusRules.Size = new System.Drawing.Size(199, 26);
             this.cbModbusRules.TabIndex = 40;
             // 
             // lbModebusRuls
@@ -342,7 +342,7 @@
             this.lbModebusRuls.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbModebusRuls.Location = new System.Drawing.Point(310, 124);
             this.lbModebusRuls.Name = "lbModebusRuls";
-            this.lbModebusRuls.Size = new System.Drawing.Size(102, 15);
+            this.lbModebusRuls.Size = new System.Drawing.Size(124, 18);
             this.lbModebusRuls.TabIndex = 39;
             this.lbModebusRuls.Text = "Modbus Rules";
             // 
@@ -353,7 +353,7 @@
             this.cbCrc.Location = new System.Drawing.Point(62, 121);
             this.cbCrc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbCrc.Name = "cbCrc";
-            this.cbCrc.Size = new System.Drawing.Size(175, 23);
+            this.cbCrc.Size = new System.Drawing.Size(175, 26);
             this.cbCrc.TabIndex = 38;
             // 
             // lbCrc
@@ -362,7 +362,7 @@
             this.lbCrc.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbCrc.Location = new System.Drawing.Point(8, 124);
             this.lbCrc.Name = "lbCrc";
-            this.lbCrc.Size = new System.Drawing.Size(37, 15);
+            this.lbCrc.Size = new System.Drawing.Size(43, 18);
             this.lbCrc.TabIndex = 37;
             this.lbCrc.Text = "CRC";
             // 
@@ -383,7 +383,7 @@
             this.comboBox2.Location = new System.Drawing.Point(430, 53);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(165, 23);
+            this.comboBox2.Size = new System.Drawing.Size(165, 26);
             this.comboBox2.TabIndex = 25;
             // 
             // numericUpDown2
@@ -401,7 +401,7 @@
             0,
             0});
             this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(104, 25);
+            this.numericUpDown2.Size = new System.Drawing.Size(104, 28);
             this.numericUpDown2.TabIndex = 35;
             this.numericUpDown2.Value = new decimal(new int[] {
             1,
@@ -415,7 +415,7 @@
             this.lbSetData.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbSetData.Location = new System.Drawing.Point(310, 59);
             this.lbSetData.Name = "lbSetData";
-            this.lbSetData.Size = new System.Drawing.Size(64, 15);
+            this.lbSetData.Size = new System.Drawing.Size(76, 18);
             this.lbSetData.TabIndex = 34;
             this.lbSetData.Text = "Set Data";
             // 
@@ -434,7 +434,7 @@
             0,
             0});
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(104, 25);
+            this.numericUpDown1.Size = new System.Drawing.Size(104, 28);
             this.numericUpDown1.TabIndex = 33;
             this.numericUpDown1.Value = new decimal(new int[] {
             1,
@@ -448,7 +448,7 @@
             this.lbNumOfData.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbNumOfData.Location = new System.Drawing.Point(8, 92);
             this.lbNumOfData.Name = "lbNumOfData";
-            this.lbNumOfData.Size = new System.Drawing.Size(108, 15);
+            this.lbNumOfData.Size = new System.Drawing.Size(135, 18);
             this.lbNumOfData.TabIndex = 32;
             this.lbNumOfData.Text = "Number of Data";
             // 
@@ -456,7 +456,7 @@
             // 
             this.tbData.Location = new System.Drawing.Point(430, 87);
             this.tbData.Name = "tbData";
-            this.tbData.Size = new System.Drawing.Size(423, 25);
+            this.tbData.Size = new System.Drawing.Size(423, 28);
             this.tbData.TabIndex = 31;
             // 
             // lbRawData
@@ -465,7 +465,7 @@
             this.lbRawData.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbRawData.Location = new System.Drawing.Point(310, 91);
             this.lbRawData.Name = "lbRawData";
-            this.lbRawData.Size = new System.Drawing.Size(70, 15);
+            this.lbRawData.Size = new System.Drawing.Size(85, 18);
             this.lbRawData.TabIndex = 30;
             this.lbRawData.Text = "Raw Data";
             // 
@@ -484,7 +484,7 @@
             0,
             0});
             this.udDataAddr.Name = "udDataAddr";
-            this.udDataAddr.Size = new System.Drawing.Size(104, 25);
+            this.udDataAddr.Size = new System.Drawing.Size(104, 28);
             this.udDataAddr.TabIndex = 29;
             this.udDataAddr.Value = new decimal(new int[] {
             1,
@@ -498,7 +498,7 @@
             this.lbDataAddr.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbDataAddr.Location = new System.Drawing.Point(8, 59);
             this.lbDataAddr.Name = "lbDataAddr";
-            this.lbDataAddr.Size = new System.Drawing.Size(95, 15);
+            this.lbDataAddr.Size = new System.Drawing.Size(118, 18);
             this.lbDataAddr.TabIndex = 28;
             this.lbDataAddr.Text = "Data Address";
             // 
@@ -517,7 +517,7 @@
             0,
             0});
             this.udSlaveAddr.Name = "udSlaveAddr";
-            this.udSlaveAddr.Size = new System.Drawing.Size(104, 25);
+            this.udSlaveAddr.Size = new System.Drawing.Size(104, 28);
             this.udSlaveAddr.TabIndex = 27;
             this.udSlaveAddr.Value = new decimal(new int[] {
             1,
@@ -531,7 +531,7 @@
             this.lbSlaveAddr.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbSlaveAddr.Location = new System.Drawing.Point(8, 28);
             this.lbSlaveAddr.Name = "lbSlaveAddr";
-            this.lbSlaveAddr.Size = new System.Drawing.Size(102, 15);
+            this.lbSlaveAddr.Size = new System.Drawing.Size(126, 18);
             this.lbSlaveAddr.TabIndex = 26;
             this.lbSlaveAddr.Text = "Slave Address";
             // 
@@ -539,7 +539,7 @@
             // 
             this.tbFunction.Location = new System.Drawing.Point(789, 21);
             this.tbFunction.Name = "tbFunction";
-            this.tbFunction.Size = new System.Drawing.Size(64, 25);
+            this.tbFunction.Size = new System.Drawing.Size(64, 28);
             this.tbFunction.TabIndex = 26;
             // 
             // cbFunc
@@ -549,7 +549,7 @@
             this.cbFunc.Location = new System.Drawing.Point(430, 23);
             this.cbFunc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbFunc.Name = "cbFunc";
-            this.cbFunc.Size = new System.Drawing.Size(353, 23);
+            this.cbFunc.Size = new System.Drawing.Size(353, 26);
             this.cbFunc.TabIndex = 25;
             // 
             // lbFunction
@@ -558,7 +558,7 @@
             this.lbFunction.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbFunction.Location = new System.Drawing.Point(310, 28);
             this.lbFunction.Name = "lbFunction";
-            this.lbFunction.Size = new System.Drawing.Size(103, 15);
+            this.lbFunction.Size = new System.Drawing.Size(125, 18);
             this.lbFunction.TabIndex = 25;
             this.lbFunction.Text = "Function Code";
             // 
@@ -577,10 +577,10 @@
             // 
             this.lbTransmitter.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbTransmitter.FormattingEnabled = true;
-            this.lbTransmitter.ItemHeight = 15;
+            this.lbTransmitter.ItemHeight = 18;
             this.lbTransmitter.Location = new System.Drawing.Point(6, 20);
             this.lbTransmitter.Name = "lbTransmitter";
-            this.lbTransmitter.Size = new System.Drawing.Size(544, 259);
+            this.lbTransmitter.Size = new System.Drawing.Size(544, 256);
             this.lbTransmitter.TabIndex = 0;
             // 
             // gbReceiverLog
@@ -598,10 +598,10 @@
             // 
             this.lbReceiver.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbReceiver.FormattingEnabled = true;
-            this.lbReceiver.ItemHeight = 15;
+            this.lbReceiver.ItemHeight = 18;
             this.lbReceiver.Location = new System.Drawing.Point(6, 20);
             this.lbReceiver.Name = "lbReceiver";
-            this.lbReceiver.Size = new System.Drawing.Size(544, 259);
+            this.lbReceiver.Size = new System.Drawing.Size(544, 256);
             this.lbReceiver.TabIndex = 1;
             // 
             // gbTransmitterTools
@@ -624,7 +624,7 @@
             this.rbChar.AutoSize = true;
             this.rbChar.Location = new System.Drawing.Point(127, 26);
             this.rbChar.Name = "rbChar";
-            this.rbChar.Size = new System.Drawing.Size(62, 19);
+            this.rbChar.Size = new System.Drawing.Size(75, 22);
             this.rbChar.TabIndex = 45;
             this.rbChar.Text = "Char";
             this.rbChar.UseVisualStyleBackColor = true;
@@ -634,7 +634,7 @@
             this.rbInt.AutoSize = true;
             this.rbInt.Location = new System.Drawing.Point(75, 26);
             this.rbInt.Name = "rbInt";
-            this.rbInt.Size = new System.Drawing.Size(46, 19);
+            this.rbInt.Size = new System.Drawing.Size(54, 22);
             this.rbInt.TabIndex = 44;
             this.rbInt.Text = "Int";
             this.rbInt.UseVisualStyleBackColor = true;
@@ -645,7 +645,7 @@
             this.rbHex.Checked = true;
             this.rbHex.Location = new System.Drawing.Point(11, 26);
             this.rbHex.Name = "rbHex";
-            this.rbHex.Size = new System.Drawing.Size(58, 19);
+            this.rbHex.Size = new System.Drawing.Size(67, 22);
             this.rbHex.TabIndex = 43;
             this.rbHex.TabStop = true;
             this.rbHex.Text = "Hex";
@@ -666,7 +666,7 @@
             this.tbMessage.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.tbMessage.Location = new System.Drawing.Point(11, 51);
             this.tbMessage.Name = "tbMessage";
-            this.tbMessage.Size = new System.Drawing.Size(694, 25);
+            this.tbMessage.Size = new System.Drawing.Size(694, 28);
             this.tbMessage.TabIndex = 0;
             // 
             // FormMain

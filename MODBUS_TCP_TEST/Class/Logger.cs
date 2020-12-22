@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Data;
+using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
-using System.IO;
 
 namespace MODBUS_TCP
 {
     /// <summary>
-    /// 로그 종류의 열거형
+    /// Log Types
     /// </summary>
     public enum LogType
     {
@@ -20,21 +19,23 @@ namespace MODBUS_TCP
     /// </summary>
     public class Logger
     {
-        public string   LogDir      = "";               // 로그의 고정 위치를 저장
+        public string   strLogDir      = "";               // 로그의 고정 위치를 저장
         private object  objLock_1   = new object();     // 로그 파일 저장 동작을 보호
-        public DataRow drData;
+
+        public delegate void Logged(string LogMassage, LogType LogType);
+        public event Logged OnLogged;
 
         /// <summary>
-        /// Logger의 생성자, Logger Initialize 합니다.
+        /// Constructor of Logger, Do Initialize for Logger.
         /// </summary>
         public Logger()
         {
             try
             {
-                LogDir = Program.mSolution.SolutionPath + "\\LOGGER"; // 현재 절대 위치를 불러오고 log폴더 위치를 추가합니다.
+                strLogDir = Directory.GetParent(Environment.CurrentDirectory).FullName + "\\LOGGER"; // 현재 절대 위치를 불러오고 log폴더 위치를 추가합니다.
 
-                if (!Directory.Exists(LogDir))
-                    Directory.CreateDirectory(LogDir); // 만악 log폴더가 없을 경우 생성합니다.
+                if (!Directory.Exists(strLogDir))
+                    Directory.CreateDirectory(strLogDir); // 만악 log폴더가 없을 경우 생성합니다.
             }
             catch (Exception ex)
             {
@@ -48,10 +49,8 @@ namespace MODBUS_TCP
         /// <param name="logType">LogType에 정의되어 있는 알맞은 값을 인자값으로 요청합니다.</param>
         private string getLogPath(LogType logType) 
         {
-            string logPath = string.Format(@"{0}\{1:00}\{2:00}\log_{3:0000}{4:00}{5:00}_" + logType.ToString() + ".LOG", LogDir, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
-            // 2018년 11월 08일 DEBUG 로그 파일    ex:) (고정위치)\11\08\log_20181108_DEBUG.LOG
-            // 2018년 12월 18일 ERROR 로그 파일    ex:) (고정위치)\12\18\log_20181218_ERROR.LOG
-            // 2019년 01월 08일 INFO 로그 파일  ex:) (고정위치)\01\08\log_20190108_INFO.LOG
+            string logPath = string.Format(@"{0}\" + logType.ToString() + @"\{1:0000}{2:00}{3:00}_" + logType.ToString() + ".LOG", strLogDir, DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+            // 2018년 11월 08일 Transmitter 로그 파일    ex:) (고정위치)\Transmitter\20181108_Transmitter.LOG
 
             return logPath;
         }
@@ -160,9 +159,8 @@ namespace MODBUS_TCP
                     using (log)
                         log.WriteLine(LogMassage); // Log 파일에 기록합니다.
 
-                    if (bUpdateUI) // GUI에 기록할 경우
-                        if (Program.mFormMain != null) // MainForm이 존재할 경우
-                            Program.mFormMain.UpdateLogMsg(LogMassage); // MainForm에 기록합니다.
+                    if (bUpdateUI)
+                        OnLogged(LogMassage, logType);
                 }
             }
             catch (Exception ex)

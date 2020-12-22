@@ -1,18 +1,13 @@
 ﻿using System;
 using System.Reflection;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MODBUS_TCP
 {
     public partial class FormMain : Form
     {
+        private Logger mLogger = null;
+
         public FormMain()
         {
             InitializeComponent();
@@ -33,12 +28,36 @@ namespace MODBUS_TCP
                 gbTransmitterTools.Enabled = false;
                 gbTransmitterLog.Enabled = false;
                 gbReceiverLog.Enabled = false;
+
+                // Do Initialize for Member, Logger Class 
+                mLogger = new Logger();
+                mLogger.OnLogged += mLogger_OnLogged;
             }
             catch (Exception eFormMain_Load)
             {
-                MessageBox.Show(eFormMain_Load.Message);
+                MessageBox.Show(this.ToString() + " : " + MethodBase.GetCurrentMethod().Name + ", " + eFormMain_Load.Message, "Waring!");
             }
         }
+
+        #region Logger Event
+
+        private void mLogger_OnLogged(string LogMassage, LogType LogType)
+        {
+            switch (LogType)
+            {
+                case LogType.Transmitter:
+
+                    lbTransmitter.Items.Add(LogMassage);
+                    break;
+
+                case LogType.Receiver:
+
+                    lbReceiver.Items.Add(LogMassage);
+                    break;
+            }
+        }
+
+        #endregion
 
         #region IP TextBoxs Events
 
