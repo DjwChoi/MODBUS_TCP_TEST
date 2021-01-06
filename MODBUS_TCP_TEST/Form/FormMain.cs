@@ -9,6 +9,8 @@ namespace MODBUS_TCP
         private Logger mLogger = null;
         private Master mMaster = null;
 
+        private bool[] isTransactionID = new bool[65535];
+
         public FormMain()
         {
             InitializeComponent();
@@ -73,6 +75,8 @@ namespace MODBUS_TCP
 
         private void mMaster_OnReceivedData(byte[] data)
         {
+            if (isTransactionID[data[0]] == true) isTransactionID[data[0]] = false;
+
             mLogger.log(System.BitConverter.ToString(data), LogType.Receiver, true);
         }
 
@@ -200,43 +204,59 @@ namespace MODBUS_TCP
 
         private void btConnect_Click(object sender, EventArgs e)
         {
-            mMaster.Connect(string.Format("{0}.{1}.{2}.{3}", tbIP1.Text, tbIP2.Text, tbIP3.Text, tbIP4.Text), Convert.ToUInt16(tbPort.Text));
-
-            if (mMaster.bConnected)
+            try
             {
-                // Connection Status
-                btConnect.Text = "Disconnect";
-                tsslConnectionStatus.Text = "Connected.";
+                if (!mMaster.bConnected)
+                {
+                    mMaster.Connect(string.Format("{0}.{1}.{2}.{3}", tbIP1.Text, tbIP2.Text, tbIP3.Text, tbIP4.Text), Convert.ToUInt16(tbPort.Text));
 
-                // Enable GroupBoxs
-                gbTCPSetting.Enabled = true;
+                    // Connection Status
+                    btConnect.Text = "Disconnect";
+                    tsslConnectionStatus.Text = "Connected.";
 
-                // Disenable GroupBoxs
-                gbModbusTools.Enabled = false;
-                gbTransmitterTools.Enabled = false;
-                gbTransmitterLog.Enabled = false;
-                gbReceiverLog.Enabled = false;
+                    // Enable GroupBoxs
+                    gbModbusTools.Enabled = true;
+                    gbTransmitterTools.Enabled = true;
+                    gbTransmitterLog.Enabled = true;
+                    gbReceiverLog.Enabled = true;
+
+                    // Disenable GroupBoxs
+                    tbIP1.Enabled = false;
+                    tbIP2.Enabled = false;
+                    tbIP3.Enabled = false;
+                    tbIP4.Enabled = false;
+                    tbPort.Enabled = false;
+                }
+                else
+                {
+                    mMaster.Disconnect();
+
+                    // Connection Status
+                    btConnect.Text = "Connect";
+                    tsslConnectionStatus.Text = "Disconnected.";
+
+                    // Enable GroupBoxs
+                    gbTCPSetting.Enabled = true;
+
+                    // Disenable GroupBoxs
+                    gbModbusTools.Enabled = false;
+                    gbTransmitterTools.Enabled = false;
+                    gbTransmitterLog.Enabled = false;
+                    gbReceiverLog.Enabled = false;
+                }
+                
             }
-            else
+            catch (Exception eFormMain_Load)
             {
-                // Connection Status
-                btConnect.Text = "Connect";
-                tsslConnectionStatus.Text = "Disconnected.";
-
-                // Enable GroupBoxs
-                gbTCPSetting.Enabled = true;
-
-                // Disenable GroupBoxs
-                gbModbusTools.Enabled = false;
-                gbTransmitterTools.Enabled = false;
-                gbTransmitterLog.Enabled = false;
-                gbReceiverLog.Enabled = false;
+                MessageBox.Show(this.ToString() + " : " + MethodBase.GetCurrentMethod().Name + ", " + eFormMain_Load.Message, "Waring!");
             }
         }
 
         private void btSendMassage_Click(object sender, EventArgs e)
         {
-            // TODO: Send Massage!
+            byte[] Message = Modbus.Protocol(ref isTransactionID, 00, FunctionCode.ReadHoldingRegister, 11, 1);
+            mMaster.WriteData(Message);
+            mLogger.log(System.BitConverter.ToString(Message), LogType.Transmitter, true);
         }
     }
 }
