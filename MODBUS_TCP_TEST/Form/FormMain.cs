@@ -254,7 +254,7 @@ namespace MODBUS_TCP
 
         private void btSendMassage_Click(object sender, EventArgs e)
         {
-            byte[] Message = Modbus.Protocol(ref isTransactionID, 00, FunctionCode.ReadHoldingRegister, 11, 1);
+            byte[] Message = Modbus.Protocol(ref isTransactionID, 01, FunctionCode.ReadHoldingRegister, 11, 1);
             mMaster.WriteData(Message);
             mLogger.log(System.BitConverter.ToString(Message), LogType.Transmitter, true);
         }
